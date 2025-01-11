@@ -68,10 +68,11 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
 // Add to Cart
   const addToCart = (itemCart: AddToCartType) => {
     
-   const cleanItem = { ...itemCart }; // Only store the item properties that are serializable
+    // Make sure quantity is a number and not NaN
+   const cleanItem = { ...itemCart, quantity: itemCart.quantity || 1  }; // Only store the item properties that are serializable
   
     const newCart = cart.map(item => 
-      item.id == cleanItem.id
+      item.id === cleanItem.id
         ? { ...item, quantity: item.quantity + cleanItem.quantity }
         : item
     );
