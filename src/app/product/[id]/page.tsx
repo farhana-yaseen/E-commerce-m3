@@ -6,6 +6,7 @@ import { Items } from "@/app/ContextProvider";
 
 
 
+
 // Server-side fetching
 const ProductPage = async ({ params }: { params: { id: number } }) => {
   const itemDetail = await getData();  // Your function to fetch product details

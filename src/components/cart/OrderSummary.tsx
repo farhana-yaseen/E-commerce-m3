@@ -14,41 +14,41 @@ const OrderSummary = () => {
 
     return (
         
-        <div className="w-[290px] h-[400px] top-[612px] ml-4  md:w-[505px] md:h-[458px] md:top-[276px] md:left-[835px] lg:w-[600px] lg:h-[450px] lg:ml-24 rounded-[20px] border-[1px] border-opacity-10 p-[20px] md:py-5 md:px-6 mb-10">
+        <div className="w-[280px] h-[400px] top-[612px] ml-4  md:w-[505px] md:h-[458px] md:top-[276px] md:left-[835px] lg:w-[600px] lg:h-[470px] lg:ml-24 rounded-[20px] border-[1px] border-opacity-10 p-4 md:py-5 md:px-6 mb-10">
 
 
-                <div className="w-[170px] h-[27px] md:w-[200px] md:h-8 lg:w-56 mb-3 md:mb-8">
+                <div className="w-full mb-3 md:mb-8">
                     {/* Order Summary */}
                     <h1 className="font-serif font-bold text-xl lg:text-2xl leading-[27px] lg:leading-[32.4px]">Order Summary</h1>
                 </div>
 
                 {/* Total */}
-                <div className="w-[250px] h-[173px] md:w-[457px] md:h-[193px] flex flex-col justify-center items-center gap-5 md:gap-6">
+                <div className="w-full flex flex-col justify-center items-center gap-5 md:gap-6">
                     {/* Subtotal */}
-                    <div className="w-[230px] h-[22px] md:w-[457px] md:h-[27px] flex justify-between items-center">
-                        <h1 className="w-[58px] h-[22px] md:w-[72px] md:h-[27px] font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Subtotal</h1>
-                        <h1 className="w-[39px] h-[22px] md:w-20 md:h-[27px] font-serif font-bold text-base md:text-xl leading-[21.6px] md:leading-[27px]">Rs.{totalPrice}</h1>
+                    <div className="w-full flex justify-between items-center">
+                        <h1 className="font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Subtotal</h1>
+                        <h1 className="w-14 md:w-16 lg:20 font-serif font-bold text-base md:text-lg">Rs.{totalPrice}</h1>
                     </div>
 
                     {/* Discount */}
-                    <div className="w-[240px] h-[22px] md:w-[457px] md:h-[27px] flex justify-between items-center">
-                        <h1 className="w-[115px] h-[22px] md:w-[147px] md:h-[27px] font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Discount (-20%)</h1>
-                        <h1 className="w-[39px] h-[22px] md:w-20 md:h-[27px] font-serif font-bold text-base md:text-xl leading-[21.6px] md:leading-[27px] text-discountRate">Rs.{discount}</h1>
+                    <div className="w-full flex justify-between items-center">
+                        <h1 className="font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Discount (-20%)</h1>
+                        <h1 className="w-14 md:w-16 lg:20 font-serif font-bold text-base md:text-lg">Rs.{discount}</h1>
                     </div>
 
                     {/* Delivery Fee */}
-                    <div className="w-[240px] h-[22px] md:w-[457px] md:h-[27px] flex justify-between items-center">
-                        <h1 className="w-[96px] h-[22px] md:w-[120px] md:h-[27px] font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60 ">Delivery Fee</h1>
-                        <h1 className="w-[39px] h-[22px] md:w-20 md:h-[27px] font-serif font-bold text-base md:text-xl leading-[21.6px] md:leading-[27px]">Rs.300</h1>
+                    <div className="w-full flex justify-between items-center">
+                        <h1 className="font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Delivery Fee</h1>
+                        <h1 className="w-14 md:w-16 lg:20 font-serif font-bold text-base md:text-lg">Rs.300</h1>
                     </div>
 
                     {/* line */}
                     <div className="w-[240px] md:w-[457px] border-[1px] opacity-10"></div>
 
                     {/* Total */}
-                    <div className="w-[240px] h-[22px] md:w-[457px] md:h-[27px] flex justify-between items-center">
-                        <h1 className="w-[33px] h-[22px] md:w-[42px] md:h-[27px] font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Total</h1>
-                        <h1 className="w-[47px] h-[27px] md:w-28 md:h-[27px] font-serif font-bold text-base md:text-2xl leading-[21.6px] md:leading-[32.4px]">Rs.{grandTotal}</h1>
+                    <div className="w-full flex justify-between items-center">
+                        <h1 className="font-serif font-normal text-base md:text-xl leading-[21.6px] md:leading-[27px] opacity-60">Total</h1>
+                        <h1 className="w-14 md:w-16 lg:20 font-serif font-extrabold text-lg md:text-xl">Rs.{grandTotal}</h1>
                     </div>
                 </div>
 

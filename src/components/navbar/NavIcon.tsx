@@ -15,7 +15,7 @@ import { AddToCartType, useCart } from "../../app/ContextProvider";
 
 const NavIcon = () => {
     const { data: session } = useSession()
-    const { addToCart } = useCart();  // Access the cart context to add the product to the cart
+    const { addToCart, totalItems } = useCart();  // Access the cart context to add the product to the cart
     
 
     const handleAddToCart = (cartItem:AddToCartType) => {
@@ -36,11 +36,19 @@ const NavIcon = () => {
 
 
             {/* Cart */}
-            <Link href={"/cart"}>
-            <div className="flex flex-col justify-center items-center">
+            <Link href={"/cart"} className="relative">
+            <span className="flex flex-col justify-center items-center ">
                 <AiOutlineShoppingCart onClick={()=>handleAddToCart} className="text-xl lg:text-3xl xl:text-4xl" />
                 <p className="text-xs xl:text-sm">Cart</p>
-            </div>
+            {/* Cart item count */}
+            </span>
+
+          {totalItems > 0 && (
+            <span className="absolute top-0 right-0 text-[8px] lg:text-xs bg-red-600 text-white rounded-full w-3.5 h-3.5 lg:w-4 lg:h-4 xl:w-5 xl:h-5 flex justify-center items-center">
+              {totalItems}
+            </span>
+          )}
+
             </Link>
 
             {/* Logout */}

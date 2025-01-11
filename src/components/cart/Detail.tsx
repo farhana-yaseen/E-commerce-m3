@@ -33,7 +33,7 @@ interface DetailProps {
               <div className="p-3 my-10 lg:p-5 lg:my-16 xl:p-10 xl:my-20 border-[1px] ">
 
                 <div className="md:flex justify-center items-start gap-10 lg:gap-16 xl:gap-32">
-                  <div className=" flex items-center justify-center flex-1">
+                  <div className=" flex items-center justify-center">
                     <Image src={params.image} alt="product.title" width={300} height={300} className="w-40 h-40 lg:w-60 lg:h-60 xl:w-96 xl:h-96 object-contain"></Image>
                   </div>
 
@@ -41,11 +41,16 @@ interface DetailProps {
                   <div className="flex-1">
 
                     <div className="my-3 ">
-                      <h1 className="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold ">{params.title}</h1>
+                      <h1 className="text-base md:text-xl lg:text-2xl xl:text-3xl font-bold underline italic">{params.title}</h1>
                     </div>
 
                     <div className="my-3">
                       <p className="text-sm md:text-lg lg:text-xl xl:text-2xl text-justify">{params.description}</p>
+                    </div>
+
+                    <div className="my-3 flex items-center gap-2">
+                      <h1 className="text-sm md:text-lg lg:text-xl xl:text-2xl text-justify capitalize font-bold">Catagory:</h1>
+                      <p className="text-sm md:text-lg lg:text-xl xl:text-2xl text-justify capitalize">{params.category}</p>
                     </div>
 
                     <div className="my-3 font-bold text-sm md:text-lg lg:text-xl xl:text-2xl">
@@ -57,7 +62,7 @@ interface DetailProps {
                       <h1>Quantity: {params.rating.count}</h1>
                     </div>
                     
-                    <div className="flex justify-center items-center gap-8 lg:gap-12 mt-8 lg:mt-12 xl:mt-16">
+                    <div className="flex justify-around items-center  mt-8 lg:mt-12 xl:mt-16">
                     
                       <Link href={"/"}>
                       <div className="w-[100px] h-7 lg:w-32 lg:h-8 xl:w-44 xl:h-12 bg-red-600 rounded-lg flex items-center justify-center gap-2 cursor-pointer">

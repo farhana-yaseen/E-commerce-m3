@@ -4,6 +4,7 @@ import { Context } from "./Context";
 
 // Items interface remains the same
 export interface Items {
+  
   id: number;
   category: string;
   title: string;
@@ -37,6 +38,8 @@ export interface CartContextType {
   totalPrice: number;
   discount: number;
   grandTotal: number;
+  totalItems: number;
+
 }
 
 
@@ -62,7 +65,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
     }
   }, []);
 
-
+// Add to Cart
   const addToCart = (itemCart: AddToCartType) => {
     
    const cleanItem = { ...itemCart }; // Only store the item properties that are serializable
@@ -82,7 +85,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
     saveCart(newCart);
   };
   
-  
+  // Save
   const saveCart = (newCartItem: AddToCartType[]) => {
     if (typeof window !== "undefined") {
       localStorage.setItem("cart", JSON.stringify(newCartItem));
@@ -123,6 +126,7 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
     saveCart(updatedCartdecrease); // Ensure localStorage is updated
   };
 
+  // Clear Cart
   const clearCart = () => {
     setCart([]);
     if (typeof window !== "undefined") {
@@ -143,10 +147,14 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
   const deliveryFee = 300;  // Fixed delivery fee
   const grandTotal = Math.round(totalPrice - discount + deliveryFee);
 
+  // Total Items
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+
 
 
   return (
-    <Context.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, totalPrice, discount, grandTotal }}>
+    <Context.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, totalPrice, discount, grandTotal, totalItems }}>
       {children}
     </Context.Provider>
   );

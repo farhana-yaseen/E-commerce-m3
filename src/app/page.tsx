@@ -14,7 +14,7 @@ const FinalList = () =>{
        
         <div className="mt-10 xl:mt-16 w-full xl:max-[1440px]">
             <HeroSection/>
-            <ProductItems/>
+            <ProductItems/>  
             <Sale/>
         </div>
     )

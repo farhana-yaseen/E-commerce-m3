@@ -9,11 +9,13 @@ import { LuShoppingBasket } from "react-icons/lu";
 
 
 
+
+
 const ProductItems = async () => {
 
     const productOfferList = await getData(); // Fetch product data
 
-       
+
 
     // Filter products based on the selected category
     const productItems = productOfferList.data.map((id: Items) => id.id)
@@ -73,7 +75,8 @@ const ProductItems = async () => {
                                     </div>
                                 </Link>
 
-
+                               
+                            
                             </div>
                         </div>
                     </div>

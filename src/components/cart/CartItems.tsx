@@ -8,13 +8,13 @@ import { RiDeleteBin6Fill } from "react-icons/ri"
 
 const CartItems = () => {
 
-  const { cart, increaseQuantity, decreaseQuantity, clearCart } = useCart();
+  const { cart, increaseQuantity, decreaseQuantity, clearCart, removeFromCart } = useCart();
 
 
   if (cart.length == 0) {
     return (
       <div className="mx-3 my-6 text-sm lg:text-base xl:text-lg">
-        Your cart is empty. <Link href="/">Go shopping</Link>
+        Your cart is empty. <Link href="/" className="font-bold italic cursor-pointer">Go shopping</Link>
       </div>
     );
   }
@@ -76,7 +76,7 @@ const CartItems = () => {
                 </div>
 
               {/* Delete Icon */}
-                <div className="text-orange-700">
+                <div onClick={()=>removeFromCart(itemInCart.id)} className="text-orange-700 cursor-pointer">
                 <RiDeleteBin6Fill />
 
                 </div>
